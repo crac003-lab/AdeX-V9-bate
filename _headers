@@ -1,0 +1,11 @@
+# Cloudflare Pages 部署根目录放置本文件，发布时自动生效
+# 对单文件应用：HTML 不缓存（保证内容更新即时生效），sw.js 短缓存
+/index.html
+  Cache-Control: no-cache
+
+/sw.js
+  Cache-Control: max-age=300
+
+# 其余静态资源（如后续拆出的独立数据/图片）长缓存
+/*
+  Cache-Control: public, max-age=86400
